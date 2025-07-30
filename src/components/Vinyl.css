@@ -1,0 +1,53 @@
+.vinyl-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.vinyl {
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(#111 65%, #222 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px #000;
+  animation: spin 12s linear infinite;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  background: #fdf6e3;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label-text {
+  font-family: monospace;
+  font-size: 0.55rem;
+  text-align: center;
+  padding: 4px;
+  line-height: 1.1;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.artist {
+  font-style: italic;
+  color: #666;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
