@@ -96,3 +96,7 @@
   0% { transform: translateX(-1%) rotate(0deg); }
   100% { transform: translateX(-1%) rotate(360deg); }
 }
+
+canvas.spin {
+  animation: spin 3s linear infinite;
+}
