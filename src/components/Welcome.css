@@ -1,0 +1,98 @@
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fafafa;
+  font-family: monospace;
+  position: relative;
+  gap: 4rem;
+}
+
+.cover {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  background: white;
+  border: 5px solid black;
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.cover button {
+  padding: 0.75rem 1.5rem;
+  background: black;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.welcome-vinyl {
+  position: absolute;
+  left: 55%;
+  width: 350px;
+  height: 350px;
+  background: repeating-radial-gradient(
+    circle,
+    black,
+    black 5px,
+    #111 6px,
+    black 7px
+  );
+  border-radius: 50%;
+  z-index: 1;
+  animation: slideOut 2s ease-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 2s ease;
+}
+
+.welcome-vinyl.revealed {
+  animation: spin 3s linear infinite;
+}
+
+.welcome-vinyl .label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: lavender;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-vinyl .label::before {
+  content: '★ ★ ★ ★ ★ ★';
+  font-size: 0.9rem;
+  color: black;
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(-70%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-1%);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% { transform: translateX(-1%) rotate(0deg); }
+  100% { transform: translateX(-1%) rotate(360deg); }
+}

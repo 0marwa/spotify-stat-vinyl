@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import Vinyl from './components/Vinyl';
 import Cover from './components/Cover';
+import Welcome from './components/Welcome';
+import { redirectToSpotifyAuth } from './spotifyAuth';
 
 const mockStats = {
   short_term: {
@@ -49,6 +50,7 @@ const mockStats = {
 };
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false); // temporary state for auth
   const [timeRange, setTimeRange] = useState("short_term");
   const stats = mockStats[timeRange];
   const moodStats = {
@@ -66,6 +68,10 @@ export default function App() {
       audioRef.current.play();
     }
   };
+
+  if (!loggedIn) {
+    return <Welcome onLogin={() => setLoggedIn(true)} />;
+  }
 
   return (
     <div style={{ fontFamily: 'monospace', padding: '2rem', textAlign: 'center' }}>
@@ -110,7 +116,6 @@ export default function App() {
           </div>
         ))}
       </div>
-
     </div>
   );
 }

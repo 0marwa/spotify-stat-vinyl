@@ -37,14 +37,15 @@ body {
 button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background: #007aff;
-  color: white;
+  background: black;
+  color: lavender;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 button:hover {
-  background: #005ce6;
+  background: lavender;
+  color: black;
 }
 
 .mood-bars {
@@ -70,7 +71,7 @@ button:hover {
 }
 
 .mood-fill {
-  background-color: #007aff;
+  background-color: rgb(58, 38, 111);
   color: white;
   padding: 0.3rem;
   font-size: 0.8rem;
