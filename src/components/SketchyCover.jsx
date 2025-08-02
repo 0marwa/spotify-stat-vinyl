@@ -9,8 +9,8 @@ export default function SketchyCover({ children }) {
     const rc = rough.canvas(canvasRef.current);
     rc.rectangle(0, 0, 350, 350, {
       stroke: 'black',
-      strokeWidth: 3,
-      roughness: 2.8,
+      strokeWidth: 2.5,
+      roughness: 2,
       fill: 'white',
       fillStyle: 'solid',
     });
@@ -18,12 +18,8 @@ export default function SketchyCover({ children }) {
 
   return (
     <div
-      style={{
-        position: 'relative',
-        width: 350,
-        height: 350,
-        boxSizing: 'border-box', // ← applies to wrapper too
-      }}
+      className="sketchy-cover"
+      style={{ position: 'relative', width: 350, height: 350 }}
     >
       <canvas
         ref={canvasRef}
@@ -34,7 +30,6 @@ export default function SketchyCover({ children }) {
           top: 0,
           left: 0,
           zIndex: 1,
-          pointerEvents: 'none',
         }}
       />
       <div
@@ -51,9 +46,9 @@ export default function SketchyCover({ children }) {
           alignItems: 'center',
           fontFamily: 'monospace',
           gap: '1rem',
+          padding: '1rem',
           textAlign: 'center',
-          boxSizing: 'border-box',
-          padding: '1.5rem',
+          boxSizing: 'border-box', 
         }}
       >
         {children}

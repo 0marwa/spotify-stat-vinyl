@@ -100,3 +100,17 @@
 canvas.spin {
   animation: spin 3s linear infinite;
 }
+
+/* sketchy cover styling */
+
+@keyframes sketchy-wobble {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(-0.5deg) scale(1.005); }
+  50%  { transform: rotate(0.5deg) scale(0.995); }
+  75%  { transform: rotate(-0.3deg) scale(1.002); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.sketchy-cover:hover {
+  animation: sketchy-wobble 0.5s ease-in-out;
+}
